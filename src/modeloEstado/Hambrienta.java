@@ -1,6 +1,6 @@
 package modeloEstado;
 
-public class Hambrienta extends Estado {
+public class Hambrienta implements Estado {
 	
 	public void comer(Tamagotchi tamagotchi) {
 		tamagotchi.setEstado(new Contenta());

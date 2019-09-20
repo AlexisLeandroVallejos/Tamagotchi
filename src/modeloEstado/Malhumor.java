@@ -1,6 +1,6 @@
 package modeloEstado;
 
-public class Malhumor extends Estado {
+public class Malhumor implements Estado {
 	
 	private static final int MAXIMO_TIEMPO_DE_MALHUMOR = 80;
 

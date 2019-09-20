@@ -1,6 +1,6 @@
 package modeloEstado;
 
-public class Contenta extends Estado {
+public class Contenta implements Estado {
 	
 	private static final int FELICIDAD_POR_COMER = 1;
 	private static final int FELICIDAD_POR_JUGAR = 2;
