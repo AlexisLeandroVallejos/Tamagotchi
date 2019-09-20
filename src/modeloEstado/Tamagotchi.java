@@ -4,10 +4,14 @@ public class Tamagotchi {
 	
 	private static final int COMER_MALHUMORADO = 10;
 	
-	private int gradoDeFelicidad;
+	private int gradoDeFelicidad = 0;
 	private Estado estado;
-	private int tiempoDeMalhumor;
-	private int desgastePorJugar;
+	private int tiempoDeDesgastePorMalhumor;
+	private int desgastePorJugar = 0;
+	
+	public Tamagotchi() {
+		this.estado = new Contenta();
+	}
 	
 	public void comer() {
 		estado.comer(this);
@@ -33,16 +37,16 @@ public class Tamagotchi {
 		gradoDeFelicidad += cantidad;
 	}
 
-	public int getTiempoDeMalhumor() {
-		return tiempoDeMalhumor;
+	public int getTiempoDeDesgastePorMalhumor() {
+		return tiempoDeDesgastePorMalhumor;
 	}
 
-	public void setTiempoDeMalhumor(int tiempoDeMalhumor) {
-		this.tiempoDeMalhumor = tiempoDeMalhumor;
+	public void setTiempoDeDesgastePorMalhumor(int tiempoDeMalhumor) {
+		this.tiempoDeDesgastePorMalhumor = tiempoDeMalhumor;
 	}
 
 	public void comerMalhumorado() {
-		tiempoDeMalhumor += COMER_MALHUMORADO;
+		tiempoDeDesgastePorMalhumor += COMER_MALHUMORADO;
 	}
 	
 	public int getDesgastePorJugar() {
@@ -56,6 +60,20 @@ public class Tamagotchi {
 	public void incrementarDesgaste() {
 		desgastePorJugar++;
 	}
+	
+	public boolean estoyHambrienta() {
+		return this.getDesgastePorJugar() > 5;
+	}
+	
+	public boolean estoyMalhumorada() {
+		return this.getDesgastePorJugar() > 6;
+	}
+	
+	public boolean estoyContenta() {
+		return !estoyHambrienta() || !estoyMalhumorada();
+	}
+	
+	
 
 	
 
